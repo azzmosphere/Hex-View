@@ -19,7 +19,7 @@
  *======================================================
  *
  */
-int getFileAsInt(const char *fileName, int *lary, int *count) {
+int getFileAsInt(const char *fileName, int **lary, int *count) {
     
     int fildes = open(fileName, O_RDONLY|O_SHLOCK), err = 0, i = 0, *buffer = calloc(1,sizeof(int)),tmp;
     ssize_t rv = 0;
@@ -52,7 +52,7 @@ int getFileAsInt(const char *fileName, int *lary, int *count) {
     
     /* return our new pointers */
     if(! err){
-        *(lary) = *(buffer);
+        *(lary) = buffer;
         *(count) = i;
     }
     return err;

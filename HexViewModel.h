@@ -14,22 +14,16 @@
 #import <stdio.h>
 #import "HexView.h"
 
-#define HEXFORMAT "0x%05x "
+#define HEXFORMAT "0x%04x "
 #define BYTESZ 1
 
 @interface HexViewModel : NSObject {
-    // DEPRECIATE fildes
-    int       fildes;    /* file descriptor */
-    
-    // KEEP THIS
     NSString      *fileError;/* file error */
     NSFileHandle  *filedes;  /* file descriptor */
     NSData        *fbuffer;  /* buffer containing file data */
 }
-@property(readwrite) int fildes;
 
 @property(nonatomic, copy) NSString *fileError;
-@property(nonatomic, copy) NSFileHandle  *filedes;
 @property(nonatomic, copy) NSString      *filePath;
 @property(nonatomic, copy) NSData        *fbuffer;
 

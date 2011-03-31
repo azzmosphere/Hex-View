@@ -16,4 +16,4 @@
 
 #define BYTESZ 1
 
-int getFileAsInt(const char *fileName, int *lary, int *count);
+int getFileAsInt(const char *fileName, int **lary, int *count);

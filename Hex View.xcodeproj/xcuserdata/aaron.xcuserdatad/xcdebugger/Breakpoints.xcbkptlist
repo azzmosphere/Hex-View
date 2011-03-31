@@ -9,11 +9,13 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "HexViewModel.m"
-         timestampString = "322571676.019084"
+         timestampString = "323259643.777572"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81">
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "-getBufferAsHex"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

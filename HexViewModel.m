@@ -11,7 +11,7 @@
 #import "HexViewModel.h"
 
 @implementation HexViewModel
-@synthesize fildes, fileError, filedes, filePath, fbuffer;
+@synthesize  fileError, filePath, fbuffer;
 
 /*
  *========================================================
@@ -84,17 +84,17 @@
     
     [filePath getCString: cFileName maxLength: PATH_MAX encoding: NSNonLossyASCIIStringEncoding];
     
-    if((i = getFileAsInt(cFileName, lary,&byteCount)) != 0){
+    if((i = getFileAsInt(cFileName, &lary,&byteCount)) != 0){
         fileError = [NSString stringWithCString: strerror(i)]; 
         return nil;
     }
     
     for(;i < byteCount;i ++){
         if(sout == nil){
-            sout = [NSString stringWithFormat:@HEXFORMAT,(long) lary[i]];
+            sout = [NSString stringWithFormat:@HEXFORMAT, lary[i]];
         }
         else {
-            sout = [sout stringByAppendingFormat:@HEXFORMAT,(long) lary[i]];
+            sout = [sout stringByAppendingFormat:@HEXFORMAT, lary[i]];
         }
     }
     return sout;

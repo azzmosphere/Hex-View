@@ -47,6 +47,9 @@
                 [alert runModal];
             }
             else { 
+                /* Set the default font and size */
+                fview.font = [NSFont fontWithName:@FONT size:FNTSZ];
+
                 /* Populate buffer */
                 [fview setString:[hexview getBufferAsHex]];
             }
