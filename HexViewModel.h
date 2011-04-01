@@ -24,15 +24,12 @@
 }
 
 @property(nonatomic, copy) NSString *fileError;
-@property(nonatomic, copy) NSString      *filePath;
-@property(nonatomic, copy) NSData        *fbuffer;
+@property(nonatomic, copy) NSString *filePath;
+@property(nonatomic, copy) NSData   *fbuffer;
 
 -(HexViewModel *) initWithFilePath: (NSString *) filePathIn;
-
-
 -(BOOL)checkFile;
--(void)closeFile;
 -(NSString *)getFileError;
--(NSString *)getBufferAsHex;
+-(NSString *)getBufferAsHex: (id *)prog;
 
 @end

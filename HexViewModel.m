@@ -52,17 +52,6 @@
 
 /*
  *========================================================
- * closeFile
- *
- * Close file if it has been open otherwise do nothing.
- *========================================================
- */
--(void)closeFile {
-    // Function stump for completeness
-}
-
-/*
- *========================================================
  * getFileError
  *========================================================
  */
@@ -77,7 +66,7 @@
  * Return the contents of the read file as ASCII text
  *========================================================
  */
--(NSString *)getBufferAsHex {
+-(NSString *)getBufferAsHex: (id *)prog {
     NSString  *sout = nil;
     int i =0, *lary = calloc(1,sizeof(int)), byteCount = 0;
     char *cFileName = calloc(PATH_MAX,BYTESZ);
@@ -99,5 +88,15 @@
     }
     return sout;
 }
+
+/*
+ *========================================================
+ * setProgressMeter
+ *
+ * Set the progress meter, or try too. 
+ *========================================================
+ */
+
+
 
 @end

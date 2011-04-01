@@ -13,12 +13,14 @@
 #define FNTSZ 12.0
 
 @interface HevViewController : NSObject {
-    NSArray* files;  /* Container for open files */
-    IBOutlet NSTextView *fview;
+    NSArray* files;                      /* Container for open files */
+    IBOutlet NSTextView *fview;          /* The main window class */
+    IBOutlet NSProgressIndicator *fProg; /* Progress inficator */
     HexViewModel *hexview;
 }
 @property(nonatomic, retain) IBOutlet NSTextView *fview;
 
 -(IBAction)openFile: (id) sender;
 -(IBAction)closeFile: (id) sender;
+-(void) awakeFromNib;
 @end
