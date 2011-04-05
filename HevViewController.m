@@ -66,11 +66,15 @@
             }
             else { 
                 /* Populate buffer */
-                [fview setString:[hexview getBufferAsHex:&fProg]];
+                [fview setString:[hexview getBufferAsHex: fProg]];
                 
                 /* Add file to recent files array */
                 [[NSDocumentController sharedDocumentController]
                  noteNewRecentDocumentURL:[NSURL fileURLWithPath:[files objectAtIndex:i]]];
+                
+                /* turn off progress bar */
+                [fProg setDisplayedWhenStopped:NO];
+                [fProg setDoubleValue:0.0];
             }
         }
     }

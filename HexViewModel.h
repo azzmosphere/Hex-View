@@ -16,6 +16,7 @@
 
 #define HEXFORMAT "0x%04x "
 #define BYTESZ 1
+#define POFFSET 30 /* progress bar offset in bytes */
 
 @interface HexViewModel : NSObject {
     NSString      *fileError;/* file error */
@@ -30,6 +31,6 @@
 -(HexViewModel *) initWithFilePath: (NSString *) filePathIn;
 -(BOOL)checkFile;
 -(NSString *)getFileError;
--(NSString *)getBufferAsHex: (id *)prog;
+-(NSString *)getBufferAsHex: (id)prog;
 
 @end

@@ -66,9 +66,9 @@
  * Return the contents of the read file as ASCII text
  *========================================================
  */
--(NSString *)getBufferAsHex: (id *)prog {
+-(NSString *)getBufferAsHex: (id)prog {
     NSString  *sout = nil;
-    int i =0, *lary = calloc(1,sizeof(int)), byteCount = 0;
+    int i =0, *lary = calloc(1,sizeof(int)), byteCount = 0, pOffset = BYTE_SIZE;
     char *cFileName = calloc(PATH_MAX,BYTESZ);
     
     [filePath getCString: cFileName maxLength: PATH_MAX encoding: NSNonLossyASCIIStringEncoding];
@@ -84,6 +84,15 @@
         }
         else {
             sout = [sout stringByAppendingFormat:@HEXFORMAT, lary[i]];
+        }
+        if(i >= pOffset){
+            @try{
+                [prog setDoubleValue:100*i/(double)byteCount]; 
+                [prog displayIfNeeded];
+            }@finally {
+                // do nothing
+            }
+            pOffset += POFFSET;
         }
     }
     return sout;
